@@ -51,6 +51,24 @@ myProduct("free-delivery", "delivery-cost", 0);
 //Handle paid DeliveryEvent Listener
 myProduct("paid-delivery", "delivery-cost", 20);
 
+const promoCode = "sakib";
+
+document.getElementById("apply-btn").addEventListener("click", function () {
+  const inputBox = document.getElementById("promo-input");
+  const userInput = inputBox.value;
+  if (userInput == promoCode) {
+    const total = document.getElementById("total-price");
+    const totalPrice = parseFloat(total.innerText);
+    const discount = totalPrice * 0.2;
+    const discountAmount = document.getElementById("discount");
+    discountAmount.innerText = discount;
+    const newTotal = totalPrice - discount;
+    total.innerText = newTotal;
+  } else {
+    document.body.style.background = "red";
+  }
+});
+
 // //Handle 8GB Memory Event Listener
 
 // document.getElementById("eightGB").addEventListener("click", function () {
