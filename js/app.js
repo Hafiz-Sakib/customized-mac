@@ -66,12 +66,16 @@ document.getElementById("apply-btn").addEventListener("click", function () {
     total.innerText = newTotal;
     const successMessage = document.getElementById("promo-success");
     successMessage.style.display = "block";
+    const failMessage = document.getElementById("promo-fail");
+    failMessage.style.display = "none";
 
     //disable button after promo applied
     document.getElementById("apply-btn").disabled = true;
   } else {
     const failMessage = document.getElementById("promo-fail");
     failMessage.style.display = "block";
+    const successMessage = document.getElementById("promo-success");
+    successMessage.style.display = "none";
   }
 });
 
