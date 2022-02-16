@@ -26,7 +26,7 @@ function myProduct(clickId, updateId, price) {
   document.getElementById(clickId).addEventListener("click", function () {
     console.log("new");
     updatePrice(updateId, price);
-    // document.getElementById(clickId).style.backgroundColor = "cornflowerblue";
+    document.getElementById(clickId).style.backgroundColor = "cornflowerblue";
   });
 }
 
@@ -64,8 +64,14 @@ document.getElementById("apply-btn").addEventListener("click", function () {
     discountAmount.innerText = discount;
     const newTotal = totalPrice - discount;
     total.innerText = newTotal;
+    const successMessage = document.getElementById("promo-success");
+    successMessage.style.display = "block";
+
+    //disable button after promo applied
+    document.getElementById("apply-btn").disabled = true;
   } else {
-    document.body.style.background = "red";
+    const failMessage = document.getElementById("promo-fail");
+    failMessage.style.display = "block";
   }
 });
 
